@@ -6,6 +6,11 @@ const Microsecciones = ({ secciones }) => {
     case "Dashboard":
       return <MicroDashboard />;
       break;
+    case "Análitica":
+      return (
+        <MicroAnalitica />
+      );
+      break;
     case "Payments":
       return (
         <div>
@@ -20,11 +25,7 @@ const Microsecciones = ({ secciones }) => {
         </div>
       );
       break;
-    case "Análitica":
-      return (
-        <MicroAnalitica />
-      );
-      break;
+
     default:
       break;
   }

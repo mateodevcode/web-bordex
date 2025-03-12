@@ -15,12 +15,18 @@ function NavSecciones() {
       icon: MdDashboard,
       label: "Dashboard",
     },
-    { icon: RiBankLine, label: "Payments" },
+    {
+      icon: LuNetwork,
+      label: "Análitica"
+    },
+    {
+      icon: RiBankLine,
+      label: "Payments"
+    },
     {
       icon: TbDeviceDesktopCode,
       label: "Embedding",
     },
-    { icon: LuNetwork, label: "Análitica" },
   ];
 
   return (
@@ -30,11 +36,10 @@ function NavSecciones() {
           <button
             key={index}
             onClick={() => setSecciones(button.label)}
-            className={`flex flex-row justify-center items-center gap-2 py-3 rounded-lg  ${
-              secciones === button.label
+            className={`flex flex-row justify-center items-center gap-2 py-3 rounded-lg  ${secciones === button.label
                 ? "bg-blue-600 text-white hover:bg-blue-500"
                 : "text-gray-700 hover:bg-blue-500/10 hover:text-blue-400"
-            }`}
+              }`}
           >
             <button.icon className="text-xl" />
             <p className="font-semibold text-lg">{button.label}</p>
