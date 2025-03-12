@@ -2,7 +2,7 @@ import { Check, Plus, ShoppingBag } from "lucide-react";
 
 export default function MicroDashboard() {
   return (
-    <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto mb-8 ">
+    <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto mb-8 xl:h-[400px] lg:h-[400px] md:h-[650px] sm:h-[800px] smd:h-[800px]">
       <div className=" rounded-3xl p-6 flex flex-col md:flex-row gap-6 flex-1">
         {/* Users Card */}
         <div className="bg-[#B3F4F1] rounded-2xl p-5 flex flex-col flex-1">

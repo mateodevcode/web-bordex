@@ -1,22 +1,12 @@
 "use client";
-import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import BotonLeerMas from "/src/components/info/BotonLeerMas";
-import Link from "next/link";
+import { MdArrowForward } from "react-icons/md";
 
 function InfoSection() {
   return (
     <div className="w-full overflow-hidden">
-      <div className="w-full relative sm:pt-20 smd:pt-0 mb-8">
-        <Image
-          className="w-full h-auto overflow-hidden filter brightness-50"
-          src={"https://i.postimg.cc/YqXcyMBJ/ai-generated-8704020.jpg"}
-          alt="Gestión de inventarios simplificada"
-          layout="responsive"
-          width={1680}
-          height={1240}
-        />
-
+      <div className="w-full relative h-[600px] sm:h-[600px] md:h-[700px] lg:h-[800px] xl:h-[900px]"
+        style={{ backgroundImage: "url('https://i.postimg.cc/YqXcyMBJ/ai-generated-8704020.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
         <div className="absolute inset-0 bg-blue-700/30"></div>
         <div className="flex flex-col items-center justify-center absolute inset-0 mx-auto">
           <BotonLeerMas />
@@ -30,19 +20,18 @@ function InfoSection() {
             control eficiente de inventarios.
           </h2>
           {/* Botones */}
-          <div className="flex sm:flex-row sm:w-screen sm:justify-center sm:gap-2 smd:flex-row smd:w-screen smd:justify-center smd:gap-4 md:flex-row md:w-screen md:gap-6 mt-6 w-auto items-center">
- </div>         {/* Boton 1 */}
-          <Link href={"/explorar-mas"}>
-            <button className="sm:text-sm sm:px-3 sm:w-auto sm:text-center smd:text-sm smd:px-3 smd:w-auto smd:text-center md:text-xl lg:text-base md:px-4 bg-blue-600 hover:bg-blue-500 text-white px-8 py-2 rounded-lg">
+          <div className="flex xl:flex-row lg:flex-row md:flex-row sm:flex-col smd:flex-col justify-center items-center mt-5"> {/* Botones */}
+            {/* Boton 1 */}
+            <button className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-2 rounded-lg font-semibold m-1">
               Explorar Funciones
             </button>
-          </Link>
 
-          {/* Boton 2 */}
-          <button className="flex flex-row items-center justify-center sm:text-sm sm:px-4 sm:w-auto smd:text-sm smd:px-3 smd:w-auto smd:text-center md:text-xl md:px-4 lg:text-base text-white py-2 px-8 rounded-lg hover:bg-white/10 ">
-            <p className="font-bold">Conoce Más </p>{" "}
-            <ArrowRight className="w-4 h-4 ml-1 text-white font-extrabold transition-transform duration-300 hover:translate-x-1" />{" "}
-          </button>
+            {/* Boton 2 */}
+            <button className="px-3 py-2 rounded-lg text-white hover:bg-white/10 flex flex-row justify-center items-center m-1">
+              <p className="font-semibold">Conoce Más </p>{" "}
+              <MdArrowForward className="text-white text-base ml-4" />{" "}
+            </button>
+          </div>
         </div>
       </div>
     </div>

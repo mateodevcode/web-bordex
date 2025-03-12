@@ -1,4 +1,5 @@
 import MicroDashboard from "./MicroDashboard";
+import MicroAnalitica from "./MicroAnalitica";
 
 const Microsecciones = ({ secciones }) => {
   switch (secciones) {
@@ -21,9 +22,7 @@ const Microsecciones = ({ secciones }) => {
       break;
     case "Análitica":
       return (
-        <div>
-          <h1>Análitica</h1>
-        </div>
+        <MicroAnalitica />
       );
       break;
     default:

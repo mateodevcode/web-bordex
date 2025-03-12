@@ -1,54 +1,17 @@
 import { CheckCircle } from "lucide-react";
+import { plans } from "../data/plans";
 
 function Precios() {
-  const plans = [
-    {
-      title: "Básico",
-      price: "$49",
-      features: [
-        "Up to 100 crossings per month",
-        "Basic documentation",
-        "Email support",
-        "Basic documentation",
-        "Email support",
-        "Email support",
-      ],
-    },
-    {
-      title: "Estándar",
-      price: "$149",
-      features: [
-        "Up to 1,000 crossings per month",
-        "Advanced documentation",
-        "Priority support",
-        "Advanced documentation",
-        "Priority support",
-        "Priority support",
-      ],
-    },
-    {
-      title: "Pro",
-      price: "$499",
-      features: [
-        "Unlimited crossings",
-        "Complete documentation suite",
-        "24/7 dedicated support",
-        "Unlimited crossings",
-        "Complete documentation suite",
-        "24/7 dedicated support",
-      ],
-    },
-  ];
 
   return (
     <section className="w-full flex flex-col items-center py-12 md:py-20 lg:py-10 mb-16 mt-14 justify-center bg-gray-50">
       <div className="container px-4 mb-1 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="">
-            <h2 className="text-5xl mb-6 text-slate-900 font-medium sm:text-4xl/tight smd:text-4xl/tight md:text-4xl/tight lg:text-4xl/tight xl:text-4xl/tight">
+            <h2 className="mb-6 text-slate-900 font-medium xl:text-5xl lg:text-4xl md:text-4xl sm:text-2xl smd:text-3xl">
               Elige el plan ideal para tu negocio
             </h2>
-            <p className="inline-block rounded-lg px-3 mb-8 text-md text-gray-600">
+            <p className="inline-block rounded-lg px-3 mb-8 text-gray-600 xl:text-lg lg:text-lg md:text-base sm:text-sm smd:text-base">
               Simplifica la gestión de inventarios con nuestros planes
               flexibles. Encuentra la solución perfecta para tu empresa.
             </p>

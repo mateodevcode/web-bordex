@@ -1,36 +1,16 @@
-import { FaUserPlus, FaCogs, FaChartLine } from "react-icons/fa";
+import { steps } from "../data/pasos";
 
-const steps = [
-  {
-    icon: FaUserPlus,
-    title: "Regístrate",
-    description:
-      "Crea tu cuenta en Bordex y accede a todas las funcionalidades.",
-  },
-  {
-    icon: FaCogs,
-    title: "Configura tu Inventario",
-    description:
-      "Agrega productos y genera códigos QR para un control eficiente.",
-  },
-  {
-    icon: FaChartLine,
-    title: "Monitorea y Optimiza",
-    description:
-      "Usa los reportes y análisis para mejorar tus procesos de inventario.",
-  },
-];
 
 export default function HowToUse() {
   return (
-    <section className="w-full py-12 lg:py-14 bg-white">
+    <section className="w-full py-20 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-3 max-w-[800px]">
-            <h2 className="text-2xl font-medium tracking-tighter sm:text-4xl smd:text-4xl md:text-x4l lg:text-4xl xl:text-4xl mb-10">
+            <h2 className="font-medium tracking-tighter mb-10 xl:text-4xl lg:text-4xl md:text-3xl sm:text-2xl smd:text-2xl">
               Cómo Usar Bordex
             </h2>
-            <p className="mx-auto lg:max-w-[640px] xl:max-w-[750px] text-muted-foreground sm:text-base smd:px-3 smd:text-base md:text-lg xl:text-lg md:px-6 md:mb-20 lg:px-0">
+            <p className="mx-auto smd:px-3 md:px-6 md:mb-20 lg:px-0 xl:text-lg lg:text-lg md:text-base sm:text-base">
               Sigue estos pasos para implementar Bordex en tu negocio y
               maximizar la eficiencia.
             </p>
@@ -46,7 +26,7 @@ export default function HowToUse() {
               className="flex flex-col sm:flex-row md:flex-row lg:flex-row sm:justify-center md:justify-start md:items-start sm:items-start lg:items-start lg:justify-start gap-6 z-20"
             >
               <div className="w-16 flex flex-col md:flex-col md:justify-start md:items-start sm:items-start justify-center">
-                <div className="w-16 h-16 rounded-full bg-white shadow-lg flex flex-col items-center justify-center">
+                <div className="xl:w-16 lg:w-16 md:w-16 w-12 xl:h-16 lg:h-16 md:h-16 h-12 rounded-full bg-white shadow-lg flex flex-col items-center justify-center">
                   <step.icon className="w-8 h-8 text-blue-950" />
                 </div>
               </div>

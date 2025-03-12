@@ -1,45 +1,18 @@
 "use client"
 import React from 'react'
 import Image from 'next/image'
+import { logos } from "../data/slider.empresas";
 
 const Slider = () => {
 
-    const logos = [
-        "https://i.postimg.cc/qqbR0qnL/Mongo-DB-512.png",
-        "https://i.postimg.cc/gcNr3S5Z/nodejs-512.png",
-        "https://i.postimg.cc/Hk7xDpLw/tailwind-512.png",
-        "https://i.postimg.cc/XqqJNhF5/java.png",
-        "https://i.postimg.cc/y60Bc76N/spring-boot.png",
-        "https://i.postimg.cc/qqbR0qnL/Mongo-DB-512.png",
-        "https://i.postimg.cc/gcNr3S5Z/nodejs-512.png",
-        "https://i.postimg.cc/Hk7xDpLw/tailwind-512.png",
-        "https://i.postimg.cc/XqqJNhF5/java.png",
-        "https://i.postimg.cc/y60Bc76N/spring-boot.png",
-        "https://i.postimg.cc/qqbR0qnL/Mongo-DB-512.png",
-        "https://i.postimg.cc/gcNr3S5Z/nodejs-512.png",
-        "https://i.postimg.cc/Hk7xDpLw/tailwind-512.png",
-        "https://i.postimg.cc/XqqJNhF5/java.png",
-        "https://i.postimg.cc/y60Bc76N/spring-boot.png",
-        "https://i.postimg.cc/qqbR0qnL/Mongo-DB-512.png",
-        "https://i.postimg.cc/gcNr3S5Z/nodejs-512.png",
-        "https://i.postimg.cc/Hk7xDpLw/tailwind-512.png",
-        "https://i.postimg.cc/XqqJNhF5/java.png",
-        "https://i.postimg.cc/y60Bc76N/spring-boot.png",
-        "https://i.postimg.cc/qqbR0qnL/Mongo-DB-512.png",
-        "https://i.postimg.cc/gcNr3S5Z/nodejs-512.png",
-        "https://i.postimg.cc/Hk7xDpLw/tailwind-512.png",
-        "https://i.postimg.cc/XqqJNhF5/java.png",
-        "https://i.postimg.cc/y60Bc76N/spring-boot.png",
-      ]
-
   return (
-    <div className="overflow-hidden whitespace-nowrap relative w-full mb-8">
+    <div className="overflow-hidden whitespace-nowrap relative w-full my-5">
       <div className="flex items-center space-x-10 animate-marquee ">
         {logos.map((logo, index) => (
-          <Image key={index} src={logo} alt={`Logo ${index}`} width={120} height={60} />
+          <Image key={index} src={logo} alt={`Logo ${index}`} width={200} height={60} className='xl:w-24 lg:w-24 md:w-24 smd:w-20 sm:w-20 h-auto' />
         ))}
         {logos.map((logo, index) => (
-          <Image key={`duplicate-${index}`} src={logo} alt={`Logo ${index}`} width={120} height={60} />
+          <Image key={`duplicate-${index}`} src={logo} alt={`Logo ${index}`} width={400} height={200} className='xl:w-24 lg:w-24 md:w-24 smd:w-20 sm:w-20 h-auto' />
         ))}
       </div>
     </div>
