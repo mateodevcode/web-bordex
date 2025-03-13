@@ -1,5 +1,6 @@
 import MicroDashboard from "./MicroDashboard";
 import MicroAnalitica from "./MicroAnalitica";
+import MicroUsuarios from "./MicroUsuarios";
 
 const Microsecciones = ({ secciones }) => {
   switch (secciones) {
@@ -11,17 +12,15 @@ const Microsecciones = ({ secciones }) => {
         <MicroAnalitica />
       );
       break;
-    case "Payments":
+    case "Usuarios":
       return (
-        <div>
-          <h1>Payments</h1>
-        </div>
+        <MicroUsuarios />
       );
       break;
-    case "Embedding":
+    case "Procesos":
       return (
         <div>
-          <h1>Embedding</h1>
+          <h1>Procesos</h1>
         </div>
       );
       break;

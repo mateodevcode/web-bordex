@@ -21,11 +21,11 @@ function NavSecciones() {
     },
     {
       icon: RiBankLine,
-      label: "Payments"
+      label: "Usuarios",
     },
     {
       icon: TbDeviceDesktopCode,
-      label: "Embedding",
+      label: "Procesos",
     },
   ];
 
