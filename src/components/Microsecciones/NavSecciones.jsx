@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { RiBankLine } from "react-icons/ri";
+import { BsPersonGear } from "react-icons/bs";
 import { TbDeviceDesktopCode } from "react-icons/tb";
 import { LuNetwork } from "react-icons/lu";
 import { MdDashboard } from "react-icons/md";
@@ -17,10 +17,10 @@ function NavSecciones() {
     },
     {
       icon: LuNetwork,
-      label: "Análitica"
+      label: "Análitica",
     },
     {
-      icon: RiBankLine,
+      icon: BsPersonGear,
       label: "Usuarios",
     },
     {
@@ -36,10 +36,11 @@ function NavSecciones() {
           <button
             key={index}
             onClick={() => setSecciones(button.label)}
-            className={`flex flex-row justify-center items-center gap-2 py-3 rounded-lg  ${secciones === button.label
+            className={`flex flex-row justify-center items-center gap-2 py-3 rounded-lg  ${
+              secciones === button.label
                 ? "bg-blue-600 text-white hover:bg-blue-500"
                 : "text-gray-700 hover:bg-blue-500/10 hover:text-blue-400"
-              }`}
+            }`}
           >
             <button.icon className="text-xl" />
             <p className="font-semibold text-lg">{button.label}</p>

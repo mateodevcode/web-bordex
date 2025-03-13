@@ -23,7 +23,6 @@ import {
 } from "@/components/ui/table";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
-  Badge,
   CheckCircle2,
   Filter,
   Lock,
@@ -75,21 +74,10 @@ export default function MicroUsuarios() {
   ];
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [isFilterDialogOpen, setIsFilterDialogOpen] = useState(false);
-  const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
-  const [currentUser, setCurrentUser] = useState(null);
   const [filteredUsers, setFilteredUsers] = useState(usersData);
 
   const openNewUserDialog = () => {
     // Implement the logic to open the new user dialog
-  };
-
-  const openEditUserDialog = (e, user) => {
-    // Implement the logic to open the edit user dialog
-  };
-
-  const toggleUserBlocked = (userId, isBlocked) => {
-    // Implement the logic to toggle user blocked status
   };
 
   const handleSearchChange = (e) => {
@@ -100,7 +88,7 @@ export default function MicroUsuarios() {
     );
   };
 
-  const formatDate = (date) => new Date(date).toLocaleDateString();
+  // const formatDate = (date) => new Date(date).toLocaleDateString();
   const uniqueAreas = [...new Set(usersData.map((user) => user.area))];
   const uniqueCargos = [...new Set(usersData.map((user) => user.cargo))];
 
@@ -113,7 +101,7 @@ export default function MicroUsuarios() {
         onValueChange={setActiveTab}
         className="w-full h-full"
       >
-        <div className="flex xl:flex-row lg:flex-row md:flex-row smd:flex-col sm:flex-col items-start justify-between mb-6">
+        <div className="flex xl:flex-row lg:flex-row md:flex-row smd:flex-col sm:flex-col items-start justify-between mb-6 p-4">
           <div>
             <h1 className="xl:text-3xl lg:text-2xl md:text-xl smd:text-xl sm:text-lg font-bold tracking-tight mb-2">
               Panel de Usuarios
