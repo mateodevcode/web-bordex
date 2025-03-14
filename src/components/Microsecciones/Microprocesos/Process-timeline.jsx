@@ -21,7 +21,7 @@ const PROCESSES = [
     fechaInicio: "2023-02-01",
     fechaFin: "2023-02-02",
   },
-  {   
+  {
     proceso: "Ensamblaje",
     tiempo: 60,
     estado: "completado",
@@ -34,7 +34,6 @@ const PROCESSES = [
     estado: "retrasado",
     fechaInicio: "2023-04-01",
     fechaFin: "2023-04-02",
-
   },
   {
     proceso: "Empaque",
@@ -49,10 +48,7 @@ const PROCESSES = [
     estado: "pendiente",
     fechaInicio: "2023-06-01",
     fechaFin: "2023-06-02",
-
-  }
-
-
+  },
 
   // Agrega más procesos según sea necesario
 ];
@@ -80,7 +76,7 @@ const formatDate = (dateString) => {
 };
 
 export function ProcessTimeline() {
-  const [processes, setProcesses] = useState(PROCESSES);
+  const [processes] = useState(PROCESSES);
 
   return (
     <div className="space-y-6">
@@ -129,7 +125,9 @@ function ProcessCard({ process, canEdit }) {
               <Clock className="h-4 w-4 text-muted-foreground" />
               <span className="text-sm">{process.tiempo} minutos</span>
             </div>
-            <Badge className={`${STATUS_MAPPING[status].color} px-2 py-0.5 semibold text-white`}>
+            <Badge
+              className={`${STATUS_MAPPING[status].color} px-2 py-0.5 semibold text-white`}
+            >
               {STATUS_MAPPING[status].label}
             </Badge>
           </div>
@@ -157,7 +155,9 @@ function ProcessCard({ process, canEdit }) {
                   size="sm"
                   variant={status === "pendiente" ? "default" : "outline"}
                   onClick={() => handleStatusChange("pendiente")}
-                  className={`p-2 ${status === "pendiente" ? "text-white semibold" : ""}`}
+                  className={`p-2 ${
+                    status === "pendiente" ? "text-white semibold" : ""
+                  }`}
                 >
                   Pendiente
                 </Button>
@@ -165,7 +165,9 @@ function ProcessCard({ process, canEdit }) {
                   size="sm"
                   variant={status === "en-progreso" ? "default" : "outline"}
                   onClick={() => handleStatusChange("en-progreso")}
-                  className={`py-2 px-3 ${status === "en-progreso" ? "text-white semibold" : ""}`}
+                  className={`py-2 px-3 ${
+                    status === "en-progreso" ? "text-white semibold" : ""
+                  }`}
                 >
                   En Progreso
                 </Button>
@@ -173,7 +175,9 @@ function ProcessCard({ process, canEdit }) {
                   size="sm"
                   variant={status === "completado" ? "default" : "outline"}
                   onClick={() => handleStatusChange("completado")}
-                  className={`p-2 ${status === "completado" ? "text-white semibold" : ""}`}
+                  className={`p-2 ${
+                    status === "completado" ? "text-white semibold" : ""
+                  }`}
                 >
                   Completado
                 </Button>
@@ -181,7 +185,9 @@ function ProcessCard({ process, canEdit }) {
                   size="sm"
                   variant={status === "retrasado" ? "default" : "outline"}
                   onClick={() => handleStatusChange("retrasado")}
-                  className={`p-2 ${status === "retrasado" ? "text-white semibold" : ""}`}
+                  className={`p-2 ${
+                    status === "retrasado" ? "text-white semibold" : ""
+                  }`}
                 >
                   Retrasado
                 </Button>
