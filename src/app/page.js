@@ -1,5 +1,5 @@
 import Footer from "../components/Footer";
-import Header from "../components/Header";
+import Header from "../components/NavBarTop";
 import InfoSection from "../components/info/InfoSection";
 import Caracteristicas from "../components/Caracteristicas";
 import ComoUsar from "../components/ComoUsar";

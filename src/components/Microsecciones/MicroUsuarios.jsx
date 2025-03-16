@@ -95,7 +95,7 @@ export default function MicroUsuarios() {
   const [activeTab, setActiveTab] = useState("users");
 
   return (
-    <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto mb-8 xl:h-[400px] lg:h-[400px] md:h-auto sm:h-auto smd:h-auto bg-zinc-100 rounded-lg px-8 py-2 overflow-hidden">
+    <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto mb-8 xl:h-[400px] lg:h-[400px] md:h-auto sm:h-auto smd:h-auto bg-zinc-100 rounded-lg px-8 py-2 overflow-auto">
       <Tabs
         value={activeTab}
         onValueChange={setActiveTab}
@@ -134,7 +134,7 @@ export default function MicroUsuarios() {
           </TabsList>
         </div>
 
-        <TabsContent value="users" className="space-y-4 h-full overflow-auto">
+        <TabsContent value="users" className="space-y-4 h-full">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 w-full max-w-sm">
               <div className="relative w-full">
@@ -242,27 +242,30 @@ export default function MicroUsuarios() {
                       </TableCell>
                       <TableCell>{user.creado}</TableCell>
                       <TableCell className="text-right">
-                        <DropdownMenu>
-                          <DropdownMenuTrigger asChild>
+                        <DropdownMenu >
+                          <DropdownMenuTrigger asChild >
                             <Button variant="ghost" className="h-8 w-8 p-0">
                               <span className="sr-only">Abrir menú</span>
                               <MoreHorizontal className="h-4 w-4" />
                             </Button>
                           </DropdownMenuTrigger>
-                          <DropdownMenuContent align="end">
+                          <DropdownMenuContent
+                            className="hover:cursor-pointer bg-white"
+                            align="end"
+                          >
                             <DropdownMenuItem
-                              onClick={(e) => openEditUserDialog(e, user)}
+                            // onClick={(e) => openEditUserDialog(e, user)}
                             >
                               <UserCog className="mr-2 h-4 w-4" />
                               Editar
                             </DropdownMenuItem>
                             <DropdownMenuItem
-                              onClick={() =>
-                                toggleUserBlocked(
-                                  user.id,
-                                  user.estado === "Inactivo"
-                                )
-                              }
+                            // onClick={() =>
+                            //   toggleUserBlocked(
+                            //     user.id,
+                            //     user.estado === "Inactivo"
+                            //   )
+                            // }
                             >
                               {user.estado === "Inactivo" ? (
                                 <>
@@ -278,10 +281,10 @@ export default function MicroUsuarios() {
                             </DropdownMenuItem>
                             <DropdownMenuItem
                               className="text-destructive focus:text-destructive"
-                              onClick={() => {
-                                setCurrentUser(user);
-                                setIsDeleteDialogOpen(true);
-                              }}
+                              // onClick={() => {
+                              //   setCurrentUser(user);
+                              //   setIsDeleteDialogOpen(true);
+                              // }}
                             >
                               <Trash2 className="mr-2 h-4 w-4" />
                               Eliminar
@@ -297,7 +300,7 @@ export default function MicroUsuarios() {
           </div>
         </TabsContent>
 
-        <TabsContent value="stats" className="space-y-4 h-full overflow-auto">
+        <TabsContent value="stats" className="space-y-4 h-full">
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

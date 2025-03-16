@@ -4,7 +4,9 @@ import { plans } from "../data/plans";
 function Precios() {
 
   return (
-    <section className="w-full flex flex-col items-center py-12 md:py-20 lg:py-10 mb-16 mt-14 justify-center bg-gray-50">
+    <section 
+    id="precios"
+    className="w-full flex flex-col items-center py-12 md:py-20 lg:py-10 mb-16 mt-14 justify-center bg-gray-50">
       <div className="container px-4 mb-1 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="">

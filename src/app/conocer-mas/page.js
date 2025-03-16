@@ -1,14 +1,13 @@
+import ConocerMas from "@/src/components/ConocerMas";
 import Footer from "@/src/components/Footer";
 import Header from "@/src/components/NavBarTop";
-import Precios from "@/src/components/Precios";
+import React from "react";
 
 function page() {
   return (
-    <div className="w-full space-y-16">
+    <div>
       <Header />
-
-      <Precios />
-
+      <ConocerMas />
       <Footer />
     </div>
   );

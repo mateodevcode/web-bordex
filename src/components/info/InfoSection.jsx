@@ -1,6 +1,7 @@
 "use client";
 import BotonLeerMas from "/src/components/info/BotonLeerMas";
 import { MdArrowForward } from "react-icons/md";
+import Link from "next/link";
 
 function InfoSection() {
   return (
@@ -29,16 +30,19 @@ function InfoSection() {
           {/* Botones */}
           <div className="flex xl:flex-row lg:flex-row md:flex-row sm:flex-col smd:flex-col justify-center items-center mt-5">
             {" "}
-            {/* Botones */}
             {/* Boton 1 */}
-            <button className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-2 rounded-lg font-semibold m-1">
-              Explorar Funciones
-            </button>
+            <Link href="/explorar-mas">
+              <button className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-2 rounded-lg font-semibold m-1">
+                Explorar Funciones
+              </button>
+            </Link>
             {/* Boton 2 */}
-            <button className="px-3 py-2 rounded-lg text-white hover:bg-white/10 flex flex-row justify-center items-center m-1">
-              <p className="font-semibold">Conoce Más </p>{" "}
-              <MdArrowForward className="text-white text-base ml-4" />{" "}
-            </button>
+            <Link href={`/conocer-mas`}>
+              <button className="px-3 py-2 rounded-lg text-white hover:bg-white/10 flex flex-row justify-center items-center m-1">
+                <p className="font-semibold">Conoce Más </p>{" "}
+                <MdArrowForward className="text-white text-base ml-4" />{" "}
+              </button>
+            </Link>
           </div>
         </div>
       </div>

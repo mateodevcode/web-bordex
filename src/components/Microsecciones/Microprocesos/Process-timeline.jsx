@@ -80,7 +80,7 @@ const formatDate = (dateString) => {
 };
 
 export function ProcessTimeline() {
-  const [processes, setProcesses] = useState(PROCESSES);
+  const [processes] = useState(PROCESSES);
 
   return (
     <div className="space-y-6">
