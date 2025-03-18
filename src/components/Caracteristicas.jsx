@@ -1,47 +1,43 @@
 // import { features } from "../data/seccion.caracteristics";
-
+import Link from "next/link";
 import { FaChartLine, FaCogs, FaUserPlus } from "react-icons/fa";
 import { MdPayment } from "react-icons/md";
 
 export default function Caracteristics() {
-
   const features = [
-      {
-          icon: <FaUserPlus className="w-6 h-6 text-rose-600" />,
-          bgColor: "bg-pink-100",
-          title: "Gestion Inteligente",
-          description:
-              "Crea tu cuenta en Bordex y lleva el control de tu inventario de manera sencilla y eficiente.",
-          bgColor: "bg-rose-300",
-      },
-      {
-          icon: <FaCogs className="w-6 h-6 text-blue-600" />,
-          bgColor: "bg-blue-100",
-          title: "Soporte Personalizado",
-          description:
-              "Te acompañamos en cada paso para que aproveches al máximo todas las funcionalidades.",
-          bgColor: "bg-blue-300",
-      },
-      {
-          icon: <FaChartLine className="w-6 h-6 text-sky-500" />,
-          bgColor: "bg-sky-100",
-          title: "Costos Accesibles",
-          description:
-              "Planes flexibles diseñados para adaptarse a las necesidades de tu negocio.",
-          bgColor: "bg-sky-300",
-  
-          },
-      {
-          icon: <MdPayment  className="w-6 h-6 text-gray-500" />,
-          bgColor: "bg-gray-100",
-          title: "Facilidades de Pago",
-          description:
-              "Opciones accesibles para que la implementación de Bordex sea simple y efectiva.",
-          bgColor: "bg-gray-300",
-          },
+    {
+      icon: <FaUserPlus className="w-6 h-6 text-rose-600" />,
+      bgColor: "bg-pink-100",
+      title: "Gestion Inteligente",
+      description:
+        "Crea tu cuenta en Bordex y lleva el control de tu inventario de manera sencilla y eficiente.",
+      bgColor: "bg-rose-300",
+    },
+    {
+      icon: <FaCogs className="w-6 h-6 text-blue-600" />,
+      bgColor: "bg-blue-100",
+      title: "Soporte Personalizado",
+      description:
+        "Te acompañamos en cada paso para que aproveches al máximo todas las funcionalidades.",
+      bgColor: "bg-blue-300",
+    },
+    {
+      icon: <FaChartLine className="w-6 h-6 text-sky-500" />,
+      bgColor: "bg-sky-100",
+      title: "Costos Accesibles",
+      description:
+        "Planes flexibles diseñados para adaptarse a las necesidades de tu negocio.",
+      bgColor: "bg-sky-300",
+    },
+    {
+      icon: <MdPayment className="w-6 h-6 text-gray-500" />,
+      bgColor: "bg-gray-100",
+      title: "Facilidades de Pago",
+      description:
+        "Opciones accesibles para que la implementación de Bordex sea simple y efectiva.",
+      bgColor: "bg-gray-300",
+    },
   ];
-  
-
 
   return (
     <section className="w-full bg-zinc-50 py-32">
@@ -58,9 +54,11 @@ export default function Caracteristics() {
             la eficiencia.
           </div>
           {/* Solicita */}
-          <div className="sm:text-sm sm:w-max smd:text-base smd:w-max smd:mx-auto md:text-lg lg:text-xl xl:text-xl md:w-max text-center  mx-auto font-bold text-blue-500 hover:text-blue-600 cursor-pointer bg-white hover:bg-white/50 px-6 py-3 rounded-full shadow-sm shadow-black/10">
-            Solicita una asesoría gratuita
-          </div>
+          <Link href="https://api.whatsapp.com/send/?phone=34675464502&text=Me+gustaria+un+demo+de+BordeX&type=phone_number&app_absent=0">
+            <div className="sm:text-sm sm:w-max smd:text-base smd:w-max smd:mx-auto md:text-lg lg:text-xl xl:text-xl md:w-max text-center  mx-auto font-bold text-blue-500 hover:text-blue-600 cursor-pointer bg-white hover:bg-white/50 px-6 py-3 rounded-full shadow-sm shadow-black/10">
+              Solicita una asesoría gratuita
+            </div>
+          </Link>
         </div>
 
         {/* Recuadros */}
@@ -77,7 +75,9 @@ export default function Caracteristics() {
               </div>
               <div className="flex flex-col text-start space-y-4">
                 <div className="space-y-3">
-                  <h3 className="xl:text-2xl lg:text-xl md:text-2xl smd:text-xl sm:text-xl font-semibold">{feature.title}</h3>
+                  <h3 className="xl:text-2xl lg:text-xl md:text-2xl smd:text-xl sm:text-xl font-semibold">
+                    {feature.title}
+                  </h3>
                   <p className="text-gray-600 font-medium xl:text-base lg:text-sm md:text-base smd:text-sm sm:text-sm">
                     {feature.description}
                   </p>

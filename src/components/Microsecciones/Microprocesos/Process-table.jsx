@@ -106,7 +106,7 @@ export function ProcessTable() {
                     <SelectTrigger className="w-[180px]">
                       <SelectValue placeholder="Cambiar estado" />
                     </SelectTrigger>
-                    <SelectContent>
+                    <SelectContent className="w-[180px] bg-white flex flex-row items-center justify-center">
                       <SelectItem value="pendiente">Pendiente</SelectItem>
                       <SelectItem value="en-progreso">En Progreso</SelectItem>
                       <SelectItem value="completado">Completado</SelectItem>

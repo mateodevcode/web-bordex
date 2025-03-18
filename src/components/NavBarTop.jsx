@@ -92,7 +92,7 @@ function Header() {
               {enlaces.map((enlace, index) => (
                 <Link
                   key={index}
-                  href={`${enlace.url}`}
+                  href={`${enlace.href}`}
                   className="hover:text-blue-600 font-semibold px-2"
                   onClick={closeMenu}
                 >
