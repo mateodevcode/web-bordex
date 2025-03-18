@@ -1,10 +1,10 @@
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 export const links = [
-  { href: "/gallery", text: "Inicio" },
-  { href: "/about", text: "¿Qué es Bordex?" },
+  { href: "/", text: "Inicio" },
+  { href: "/que-es-bordex", text: "¿Qué es Bordex?" },
   { href: "/precios", text: "Precios" },
-  { href: "/contact", text: "Dashboard" },
+  { href: "/", text: "Dashboard" },
 ];
 
 export const socialLinks = [
