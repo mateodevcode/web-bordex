@@ -1,18 +1,18 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/src/components/ui/button";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@/src/components/ui/card";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
+} from "@/src/components/ui/dropdown-menu";
+import { Input } from "@/src/components/ui/input";
 import {
   Table,
   TableBody,
@@ -20,8 +20,8 @@ import {
   TableHeader,
   TableRow,
   TableCell,
-} from "@/components/ui/table";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+} from "@/src/components/ui/table";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/src/components/ui/tabs";
 import {
   CheckCircle2,
   Filter,

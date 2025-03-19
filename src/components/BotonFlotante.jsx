@@ -6,7 +6,7 @@ import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@/components/ui/hover-card"
+} from "@/src/components/ui/hover-card"
 import { FaWhatsapp } from "react-icons/fa"
 import Image from "next/image"
 import { useState } from "react";

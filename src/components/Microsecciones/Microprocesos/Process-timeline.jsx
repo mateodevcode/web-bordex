@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/src/components/ui/card";
+import { Badge } from "@/src/components/ui/badge";
+import { Button } from "@/src/components/ui/button";
 import { Clock, Calendar, AlertCircle } from "lucide-react";
 
 const PROCESSES = [

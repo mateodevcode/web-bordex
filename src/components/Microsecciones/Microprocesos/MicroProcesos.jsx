@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/src/components/ui/button";
 import { ProcessTimeline } from "./Process-timeline";
 import { ProcessTable } from "./Process-table";
 

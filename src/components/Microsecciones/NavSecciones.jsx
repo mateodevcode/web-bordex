@@ -4,6 +4,7 @@ import { BsPersonGear } from "react-icons/bs";
 import { TbDeviceDesktopCode } from "react-icons/tb";
 import { LuNetwork } from "react-icons/lu";
 import { MdDashboard } from "react-icons/md";
+import { TbCalculatorFilled } from "react-icons/tb";
 
 import Microsecciones from "./Microsecciones";
 
@@ -27,11 +28,15 @@ function NavSecciones() {
       icon: TbDeviceDesktopCode,
       label: "Procesos",
     },
+    {
+      icon: TbCalculatorFilled, // Replace this with the appropriate icon for "Nomina"
+      label: "Nomina",
+    },
   ];
 
   return (
     <section className="p-6">
-      <div className="w-full grid lg:grid-cols-4 sm:grid-cols-1 smd:grid-cols-1 lg:max-w-7xl md:gap-2 lg:gap-8 mx-auto sm:max-w-screen-sm smd:max-w-screen-smd md:max-w-screen-md mb-6 bg-white">
+      <div className="w-full grid lg:grid-cols-5 sm:grid-cols-1 smd:grid-cols-1 lg:max-w-7xl md:gap-2 lg:gap-8 mx-auto sm:max-w-screen-sm smd:max-w-screen-smd md:max-w-screen-md mb-6 bg-white">
         {buttons.map((button, index) => (
           <button
             key={index}

@@ -6,8 +6,6 @@ import { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { enlaces } from "../data/enlaces.navbar";
 
-
-
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -52,15 +50,13 @@ function Header() {
               width={50}
               height={50}
               className="sm:w-8 sm:h-8 lg:w-12 lg:h-12 xl:w-12 xl:h-12"
-              
             />
           </Link>
         </div>
         <nav className={`space-x-5 mx-4 xl:flex lg:flex md:hidden hidden`}>
           {enlaces.map((enlace, index) => (
             <Link
-            
-            key={index}
+              key={index}
               href={enlace.href}
               className="hover:text-blue-600 font-semibold xl:px-4 lg:px-3 md:px-2"
             >
