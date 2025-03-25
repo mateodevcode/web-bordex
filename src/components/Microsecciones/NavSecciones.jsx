@@ -16,21 +16,25 @@ function NavSecciones() {
       icon: MdDashboard,
       label: "Dashboard",
     },
+    
     {
       icon: LuNetwork,
       label: "Análitica",
     },
+
     {
-      icon: BsPersonGear,
-      label: "Usuarios",
+      icon: TbCalculatorFilled, // Replace this with the appropriate icon for "Nomina"
+      label: "Nomina",
     },
+
     {
       icon: TbDeviceDesktopCode,
       label: "Procesos",
     },
+
     {
-      icon: TbCalculatorFilled, // Replace this with the appropriate icon for "Nomina"
-      label: "Nomina",
+      icon: BsPersonGear,
+      label: "Usuarios",
     },
   ];
 

@@ -37,35 +37,47 @@ export default function SistemaNomina() {
     {
       id: 1,
       nombre: "Hernando Vergara",
-      rfc: "AAET8107099EZ",
-      fechaIngreso: "17/03/2022",
-      estatus: "PRE-NÓMINA",
-      salario: 2500.05,
-      isr: 0.0,
-      imss: 62.06,
-      percepciones: 2656.44,
-      deducciones: 62.06,
-      netoDepositar: 2594.38,
+      cédula: "1.006.579.226",
+      fechaIngreso: "18/03/2022",
+      cargo: "Operario",
+      salario: 1800000,
+      HorasExtras: 0.0,
+      imss: 110000,
+      percepciones: 1800000,
+      deducciones: 110000,
+      netoDepositar: 1690000,
+    },
+    {
+      id: 2,
+      nombre: "Maria Gonzalez",
+      cédula: "1.045.985.265",
+      fechaIngreso: "21/03/2022",
+      cargo: "Supervisor",
+      salario: 1950000,
+      HorasExtras: 50000,
+      imss: 120000,
+      percepciones: 2000000,
+      deducciones: 120000,
+      netoDepositar: 1880000,
+    },
+    {
+      id: 3,
+      nombre: "Isabella Lopez",
+      cédula: "1.086.579.246",
+      fechaIngreso: "19/03/2022",
+      cargo: "Contador",
+      salario: 3000000,
+      HorasExtras: 0.0,
+      imss: 180000,
+      percepciones: 3000000,
+      deducciones: 180000,
+      netoDepositar: 2820000,
     },
   ];
 
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredEmpleados, setFilteredEmpleados] = useState(empleadosData);
   const [activeTab, setActiveTab] = useState("nomina");
-  const [isFormOpen, setIsFormOpen] = useState(false);
-  const [newEmpleado, setNewEmpleado] = useState({
-    id: "",
-    nombre: "",
-    rfc: "",
-    fechaIngreso: "",
-    estatus: "PRE-NÓMINA",
-    salario: "",
-    isr: 0.0,
-    imss: 0.0,
-    percepciones: 0.0,
-    deducciones: 0.0,
-    netoDepositar: 0.0,
-  });
 
   const handleSearchChange = (e) => {
     const value = e.target.value.toLowerCase();
@@ -75,46 +87,6 @@ export default function SistemaNomina() {
         empleado.nombre.toLowerCase().includes(value)
       )
     );
-  };
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setNewEmpleado({ ...newEmpleado, [name]: value });
-  };
-
-  const handleAddEmpleado = () => {
-    const salario = parseFloat(newEmpleado.salario) || 0;
-    const imss = salario * 0.025; // Ejemplo de cálculo
-    const percepciones = salario + imss;
-    const deducciones = imss;
-    const netoDepositar = percepciones - deducciones;
-
-    const empleadoConCalculos = {
-      ...newEmpleado,
-      id: empleadosData.length + 1,
-      salario,
-      isr: 0.0,
-      imss,
-      percepciones,
-      deducciones,
-      netoDepositar,
-    };
-
-    setFilteredEmpleados([...filteredEmpleados, empleadoConCalculos]);
-    setIsFormOpen(false);
-    setNewEmpleado({
-      id: "",
-      nombre: "",
-      rfc: "",
-      fechaIngreso: "",
-      estatus: "PRE-NÓMINA",
-      salario: "",
-      isr: 0.0,
-      imss: 0.0,
-      percepciones: 0.0,
-      deducciones: 0.0,
-      netoDepositar: 0.0,
-    });
   };
 
   return (
@@ -142,9 +114,9 @@ export default function SistemaNomina() {
                   : "text-gray-400"
               }`}
             >
-              Pre-Nómina
+              Nómina
             </TabsTrigger>
-            <TabsTrigger
+            {/* <TabsTrigger
               value="stats"
               className={`${
                 activeTab === "stats"
@@ -153,7 +125,7 @@ export default function SistemaNomina() {
               }`}
             >
               Nomina
-            </TabsTrigger>
+            </TabsTrigger> */}
           </TabsList>
         </div>
 
@@ -175,84 +147,37 @@ export default function SistemaNomina() {
                 <span className="sr-only">Filtrar</span>
               </Button>
             </div>
-            <Button
-              className="text-white flex items-center gap-2"
-              onClick={() => setIsFormOpen(true)}
-            >
+            <Button className="text-white flex items-center gap-2">
               <Plus className="mr-2 h-4 w-4 text-white " />
               Nuevo Empleado
             </Button>
           </div>
 
-          {isFormOpen && (
-            <div className="p-4 bg-white rounded-md shadow-md">
-              <h2 className="text-lg font-bold mb-4">Agregar Nuevo Empleado</h2>
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                <Input
-                  name="nombre"
-                  placeholder="Nombre"
-                  value={newEmpleado.nombre}
-                  onChange={handleInputChange}
-                />
-                <Input
-                  name="rfc"
-                  placeholder="RFC"
-                  value={newEmpleado.rfc}
-                  onChange={handleInputChange}
-                />
-                <Input
-                  name="fechaIngreso"
-                  type="date"
-                  placeholder="Fecha de Ingreso"
-                  value={newEmpleado.fechaIngreso}
-                  onChange={handleInputChange}
-                />
-                <Input
-                  name="salario"
-                  type="number"
-                  placeholder="Salario"
-                  value={newEmpleado.salario}
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div className="flex justify-end mt-4">
-                <Button
-                  variant="outline"
-                  className="mr-2"
-                  onClick={() => setIsFormOpen(false)}
-                >
-                  Cancelar
-                </Button>
-                <Button onClick={handleAddEmpleado}>Guardar</Button>
-              </div>
-            </div>
-          )}
-
           <div className="rounded-md border overflow-x-auto">
             <Table className="min-w-full">
               <TableHeader>
                 <TableRow className="text-start">
-                  <TableHead className="w-[50px] text-zinc-400">ID</TableHead>
+                  <TableHead className="w-[30px] text-zinc-400">ID</TableHead>
                   <TableHead className="text-start text-zinc-400">
                     Nombre
                   </TableHead>
                   <TableHead className="text-start text-zinc-400">
-                    RFC
+                    Cédula
                   </TableHead>
                   <TableHead className="text-start text-zinc-400">
                     Fecha Ingreso
                   </TableHead>
                   <TableHead className="text-start text-zinc-400">
-                    Estatus
+                    Cargo
                   </TableHead>
                   <TableHead className="text-start text-zinc-400">
-                    Salario
+                    Salario COP
                   </TableHead>
                   <TableHead className="text-start text-zinc-400">
-                    ISR
+                    Horas Extras
                   </TableHead>
                   <TableHead className="text-start text-zinc-400">
-                    IMSS
+                    Seguridad Social
                   </TableHead>
                   <TableHead className="text-start text-zinc-400">
                     Percepciones
@@ -280,15 +205,15 @@ export default function SistemaNomina() {
                         {empleado.id}
                       </TableCell>
                       <TableCell>{empleado.nombre}</TableCell>
-                      <TableCell>{empleado.rfc}</TableCell>
+                      <TableCell>{empleado.cédula}</TableCell>
                       <TableCell>{empleado.fechaIngreso}</TableCell>
-                      <TableCell>{empleado.estatus}</TableCell>
-                      <TableCell>{empleado.salario.toFixed(2)}</TableCell>
-                      <TableCell>{empleado.isr.toFixed(2)}</TableCell>
-                      <TableCell>{empleado.imss.toFixed(2)}</TableCell>
-                      <TableCell>{empleado.percepciones.toFixed(2)}</TableCell>
-                      <TableCell>{empleado.deducciones.toFixed(2)}</TableCell>
-                      <TableCell>{empleado.netoDepositar.toFixed(2)}</TableCell>
+                      <TableCell>{empleado.cargo}</TableCell>
+                      <TableCell>{empleado.salario}</TableCell>
+                      <TableCell>{empleado.HorasExtras}</TableCell>
+                      <TableCell>{empleado.imss}</TableCell>
+                      <TableCell>{empleado.percepciones}</TableCell>
+                      <TableCell>{empleado.deducciones}</TableCell>
+                      <TableCell>{empleado.netoDepositar}</TableCell>
                       <TableCell className="text-right">
                         <DropdownMenu>
                           <DropdownMenuTrigger asChild>
@@ -301,11 +226,11 @@ export default function SistemaNomina() {
                             className="hover:cursor-pointer bg-white"
                             align="end"
                           >
-                            <DropdownMenuItem>
-                              <UserCog className="mr-2 h-4 w-4" />
+                            <DropdownMenuItem className="hover:cursor-pointer">
+                              <UserCog className=" mr-2 h-4 w-4" />
                               Editar
                             </DropdownMenuItem>
-                            <DropdownMenuItem>
+                            <DropdownMenuItem className="hover:cursor-pointer">
                               {empleado.estado === "Inactivo" ? (
                                 <>
                                   <Unlock className="mr-2 h-4 w-4" />
@@ -318,7 +243,7 @@ export default function SistemaNomina() {
                                 </>
                               )}
                             </DropdownMenuItem>
-                            <DropdownMenuItem className="text-destructive focus:text-destructive">
+                            <DropdownMenuItem className="text- focus:text-destructive hover:cursor-pointer">
                               <Trash2 className="mr-2 h-4 w-4" />
                               Eliminar
                             </DropdownMenuItem>

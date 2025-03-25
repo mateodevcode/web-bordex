@@ -21,7 +21,12 @@ import {
   TableRow,
   TableCell,
 } from "@/src/components/ui/table";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/src/components/ui/tabs";
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/src/components/ui/tabs";
 import {
   CheckCircle2,
   Filter,
@@ -75,10 +80,6 @@ export default function MicroUsuarios() {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredUsers, setFilteredUsers] = useState(usersData);
-
-  const openNewUserDialog = () => {
-    // Implement the logic to open the new user dialog
-  };
 
   const handleSearchChange = (e) => {
     const value = e.target.value.toLowerCase();
@@ -147,19 +148,12 @@ export default function MicroUsuarios() {
                   onChange={handleSearchChange}
                 />
               </div>
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={() => setIsFilterDialogOpen(true)}
-              >
+              <Button variant="outline" size="icon">
                 <Filter className="h-4 w-4" />
                 <span className="sr-only">Filtrar</span>
               </Button>
             </div>
-            <Button
-              className="text-white flex items-center gap-2"
-              onClick={openNewUserDialog}
-            >
+            <Button className="text-white flex items-center gap-2">
               <Plus className="mr-2 h-4 w-4 text-white " />
               Nuevo Usuario
             </Button>
@@ -242,8 +236,8 @@ export default function MicroUsuarios() {
                       </TableCell>
                       <TableCell>{user.creado}</TableCell>
                       <TableCell className="text-right">
-                        <DropdownMenu >
-                          <DropdownMenuTrigger asChild >
+                        <DropdownMenu>
+                          <DropdownMenuTrigger asChild>
                             <Button variant="ghost" className="h-8 w-8 p-0">
                               <span className="sr-only">Abrir menú</span>
                               <MoreHorizontal className="h-4 w-4" />
@@ -253,20 +247,11 @@ export default function MicroUsuarios() {
                             className="hover:cursor-pointer bg-white"
                             align="end"
                           >
-                            <DropdownMenuItem
-                            // onClick={(e) => openEditUserDialog(e, user)}
-                            >
+                            <DropdownMenuItem className="hover:cursor-pointer">
                               <UserCog className="mr-2 h-4 w-4" />
                               Editar
                             </DropdownMenuItem>
-                            <DropdownMenuItem
-                            // onClick={() =>
-                            //   toggleUserBlocked(
-                            //     user.id,
-                            //     user.estado === "Inactivo"
-                            //   )
-                            // }
-                            >
+                            <DropdownMenuItem className="hover:cursor-pointer">
                               {user.estado === "Inactivo" ? (
                                 <>
                                   <Unlock className="mr-2 h-4 w-4" />
@@ -279,13 +264,7 @@ export default function MicroUsuarios() {
                                 </>
                               )}
                             </DropdownMenuItem>
-                            <DropdownMenuItem
-                              className="text-destructive focus:text-destructive"
-                              // onClick={() => {
-                              //   setCurrentUser(user);
-                              //   setIsDeleteDialogOpen(true);
-                              // }}
-                            >
+                            <DropdownMenuItem className="text-destructive focus:text-destructive hover:cursor-pointer">
                               <Trash2 className="mr-2 h-4 w-4" />
                               Eliminar
                             </DropdownMenuItem>

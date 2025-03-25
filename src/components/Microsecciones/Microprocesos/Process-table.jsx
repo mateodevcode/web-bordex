@@ -107,10 +107,10 @@ export function ProcessTable() {
                       <SelectValue placeholder="Cambiar estado" />
                     </SelectTrigger>
                     <SelectContent className="w-[180px] bg-white flex flex-row items-center justify-center">
-                      <SelectItem value="pendiente">Pendiente</SelectItem>
-                      <SelectItem value="en-progreso">En Progreso</SelectItem>
-                      <SelectItem value="completado">Completado</SelectItem>
-                      <SelectItem value="retrasado">Retrasado</SelectItem>
+                      <SelectItem className="hover:cursor-pointer" value="pendiente">Pendiente</SelectItem>
+                      <SelectItem className="hover:cursor-pointer" value="en-progreso">En Progreso</SelectItem>
+                      <SelectItem className="hover:cursor-pointer" value="completado">Completado</SelectItem>
+                      <SelectItem className="hover:cursor-pointer" value="retrasado">Retrasado</SelectItem>
                     </SelectContent>
                   </Select>
                 </TableCell>

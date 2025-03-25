@@ -1,4 +1,6 @@
-import { CheckCircle } from "lucide-react";
+
+import { IoCheckmarkCircleOutline } from "react-icons/io5";
+
 import { plans } from "../data/plans";
 
 function Precios() {
@@ -7,7 +9,7 @@ function Precios() {
     <section 
     id="precios"
     className="w-full flex flex-col items-center py-12 md:py-20 lg:py-10 mb-16 mt-14 justify-center bg-gray-50">
-      <div className="container px-4 mb-1 md:px-6">
+      <div className="container px-4 mb-1 md:px-1">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="">
             <h2 className="mb-6 text-slate-900 font-medium xl:text-5xl lg:text-4xl md:text-4xl sm:text-2xl smd:text-3xl">
@@ -25,7 +27,7 @@ function Precios() {
           {plans.map((plan, index) => (
             <div
               key={index}
-              className="flex flex-col justify-around rounded-2xl h-12/12 bg-white border p-6 shadow-md hover:bg-blue-500/10 select-none hover:scale-105 transition-transform duration-300"
+              className="flex flex-col justify-between rounded-2xl h-12/12 bg-white border p-6 shadow-md hover:bg-blue-500/10 select-none hover:scale-105 transition-transform duration-300"
             >
               <div className="flex flex-col text-slate-900">
                 <div className="space-y-2">
@@ -34,20 +36,20 @@ function Precios() {
                   </h3>
                 </div>
                 <div className="mt-4 flex flex-col items-center">
-                  <span className="text-5xl font-bold">{plan.price}</span>
+                  <span className="text-4xl font-bold text-blue-500">{plan.price}</span>
                   <span className="ml-1 text-xs text-gray-500">por mes</span>
                 </div>
                 <ul className="mt-6 space-y-2 font-semibold mb-8">
                   {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-blue-600" />
-                      <span>{feature}</span>
+                    <li key={i} className="flex gap-2 items-start justify-start">
+                      <IoCheckmarkCircleOutline className="h-5 w-5 mt-0.5 text-blue-600" />
+                      <span className="w-11/12">{feature}</span>
                     </li>
                   ))}
                 </ul>
               </div>
               <button className="mt-8 bg-blue-600 text-white rounded-full w-auto py-2 hover:bg-blue-500">
-                Get Started
+          {`COMIENZA YA`} 
               </button>
             </div>
           ))}

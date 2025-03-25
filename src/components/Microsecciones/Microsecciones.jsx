@@ -12,15 +12,17 @@ const Microsecciones = ({ secciones }) => {
     case "Análitica":
       return <MicroAnalitica />;
       break;
-    case "Usuarios":
-      return <MicroUsuarios />;
-      break;
-    case "Procesos":
-      return <MicroProcesos />;
-      break;
 
     case "Nomina":
       return <MicroNomina />;
+      break;
+
+    case "Procesos":
+      return <MicroProcesos />;
+      break;
+      
+    case "Usuarios":
+      return <MicroUsuarios />;
       break;
 
     default:
