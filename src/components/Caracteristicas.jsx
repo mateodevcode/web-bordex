@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Caracteristics() {
   return (
-    <section className="w-full bg-zinc-50 py-32">
+    <section className="w-full bg-zinc-50 pb-32 xl:pt-32 lg:pt-32 md:pt-24 smd:pt-24 sm:pt-20">
       <div className="flex xl:flex-row lg:flex-row md:flex-col smd:flex-col sm:flex-col items-center justify-center space-y-8 lg:space-y-0 text-center max-w-full">
         {/* primer */}
         <div className=" flex flex-col space-y-7 xl:w-5/12 lg:w-5/12 md:w-5/6 smd:w-full sm:w-full xl:px-20 lg:px-4 md:px-16 sm:px-4 smd:px-4">

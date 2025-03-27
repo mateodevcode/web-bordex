@@ -12,7 +12,7 @@ function Precios() {
   return (
     <section
       id="precios"
-      className="w-full flex flex-col items-center py-12 md:py-20 lg:py-10 pb-10 mt-14 justify-center bg-gray-50 h-screen"
+      className="w-full flex flex-col items-center py-12 md:py-20 lg:py-10 pb-10 mt-14 justify-center bg-gray-50"
     >
       <div className="container px-4 mb-1 md:px-1">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -28,7 +28,7 @@ function Precios() {
         </div>
 
         {/* Recuadros */}
-        <div className="lg:mx-auto grid lg:max-w-7xl md:max-w-3xl sm:grid-cols-1 smd:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-6 xl:gap-8 sm:space-y-4 lg:space-y-0 md:space-y-0 mt-10">
+        <div className="lg:mx-auto grid lg:max-w-7xl md:max-w-3xl sm:grid-cols-1 smd:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-6 xl:gap-8 sm:space-y-8 lg:space-y-0 md:space-y-0 mt-10">
           {plans.map((plan, index) => (
             <div
               onClick={() => setPlann(index)}
