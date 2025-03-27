@@ -6,9 +6,7 @@ function page() {
   return (
     <div className="w-full space-y-16">
       <Header />
-
       <Precios />
-
       <Footer />
     </div>
   );

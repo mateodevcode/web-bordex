@@ -31,7 +31,7 @@ function InfoSection() {
           <div className="flex xl:flex-row lg:flex-row md:flex-row sm:flex-col smd:flex-col justify-center items-center mt-5">
             {" "}
             {/* Boton 1 */}
-            <Link href="/explorar-mas">
+            <Link href="#microsecciones">
               <button className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-2 rounded-lg font-semibold m-1">
                 Explorar Funciones
               </button>

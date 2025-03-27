@@ -1,6 +1,12 @@
 import { Check, Plus, ShoppingBag } from "lucide-react";
 
 export default function MicroDashboard() {
+  const data = [
+    "Automatiza tu control de inventario",
+    "Reduce costos en la gestión de pedidos",
+    "Optimiza la administración de nómina",
+  ];
+
   return (
     <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto mb-8 xl:h-[400px] lg:h-[400px] md:h-[650px] sm:h-[800px] smd:h-[800px]">
       <div className=" rounded-3xl p-6 flex flex-col md:flex-row gap-6 flex-1">
@@ -8,7 +14,7 @@ export default function MicroDashboard() {
         <div className="bg-[#B3F4F1] rounded-2xl p-5 flex flex-col flex-1">
           <div className="flex justify-between items-start mb-4">
             <div>
-              <p className="text-sm font-medium text-gray-700">Users</p>
+              <p className="text-sm font-medium text-gray-700">Inventario</p>
               <div className="flex items-baseline gap-2">
                 <h3 className="text-2xl font-bold">14,872</h3>
                 <span className="text-xs font-medium text-green-600">
@@ -41,10 +47,10 @@ export default function MicroDashboard() {
         <div className="bg-[#FFD6D6] rounded-2xl p-5 flex flex-col flex-1">
           <div className="flex justify-between items-start mb-4">
             <div>
-              <p className="text-sm font-medium text-gray-700">Subscriptions</p>
+              <p className="text-sm font-medium text-gray-700">Ventas</p>
               <div className="flex items-baseline gap-2">
-                <h3 className="text-2xl font-bold">78,298</h3>
-                <span className="text-xs font-medium text-red-600">-12%</span>
+                <h3 className="text-2xl font-bold">278,298</h3>
+                <span className="text-xs font-medium text-green-600">+92%</span>
               </div>
             </div>
             <div className="bg-white p-2 rounded-full">
@@ -72,11 +78,11 @@ export default function MicroDashboard() {
 
         {/* Annual Profit Card */}
         <div className="bg-white rounded-2xl p-5 flex flex-col flex-1">
-          <h3 className="text-lg font-medium mb-4">Annual Profit</h3>
+          <h3 className="text-lg font-medium mb-4">Beneficio Anual</h3>
 
           <div className="mb-4">
             <div className="flex justify-between items-center mb-1">
-              <p className="text-sm text-gray-500">Conversion Rate</p>
+              <p className="text-sm text-gray-500">Tasa de conversión</p>
               <p className="text-lg font-bold">18.4%</p>
             </div>
             <div className="bg-purple-50 rounded-lg p-2 h-16 flex items-end">
@@ -99,7 +105,7 @@ export default function MicroDashboard() {
           <div className="space-y-4 mt-auto">
             <div className="flex justify-between items-start">
               <div>
-                <p className="text-sm font-medium">Added to Cart</p>
+                <p className="text-sm font-medium">Pedidos totales</p>
                 <p className="text-xs text-gray-500">5 clicks</p>
               </div>
               <div className="text-right">
@@ -110,7 +116,7 @@ export default function MicroDashboard() {
 
             <div className="flex justify-between items-start">
               <div>
-                <p className="text-sm font-medium">Reached to Checkout</p>
+                <p className="text-sm font-medium">Stock inventarios</p>
                 <p className="text-xs text-gray-500">12 clicks</p>
               </div>
               <div className="text-right">
@@ -121,7 +127,7 @@ export default function MicroDashboard() {
 
             <div className="flex justify-between items-start">
               <div>
-                <p className="text-sm font-medium">Added to Cart</p>
+                <p className="text-sm font-medium">Pedidos en carrito</p>
                 <p className="text-xs text-gray-500">24 views</p>
               </div>
               <div className="text-right">
@@ -134,13 +140,15 @@ export default function MicroDashboard() {
       </div>
 
       {/* Right Side - Promotional Content */}
-      <div className="flex flex-col justify-center lg:w-1/3 space-y-6">
-        <h2 className="text-4xl font-bold text-gray-900">Defend your focus</h2>
+      <div className="flex flex-col justify-center lg:w-1/4 space-y-6">
+        <h2 className="text-3xl font-bold text-gray-900">
+          Optimiza tu gestión con Bordex
+        </h2>
 
         <div className="space-y-4">
-          {[1, 2, 3].map((item) => (
-            <div key={item} className="flex items-center justify-between">
-              <p className="text-lg">Up to 1,000 crossings per month</p>
+          {data.map((item, index) => (
+            <div key={index} className="flex items-center justify-between">
+              <p className="text-base">{item}</p>
               <div className="flex items-center justify-center w-6 h-6 rounded-full bg-blue-50">
                 <Check className="h-4 w-4 text-blue-600" />
               </div>
@@ -150,7 +158,7 @@ export default function MicroDashboard() {
 
         <div>
           <button className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 py-2">
-            Learn More
+            Saber más
           </button>
         </div>
       </div>

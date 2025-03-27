@@ -16,7 +16,7 @@ function NavSecciones() {
       icon: MdDashboard,
       label: "Dashboard",
     },
-    
+
     {
       icon: LuNetwork,
       label: "Análitica",
@@ -47,7 +47,7 @@ function NavSecciones() {
             onClick={() => setSecciones(button.label)}
             className={`flex flex-row justify-center items-center gap-2 py-3 rounded-lg  ${
               secciones === button.label
-                ? "bg-blue-600 text-white hover:bg-blue-500"
+                ? "bg-blue-600 text-white hover:bg-blue-700"
                 : "text-gray-700 hover:bg-blue-500/10 hover:text-blue-400"
             }`}
           >

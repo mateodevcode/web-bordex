@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { links, socialLinks } from "../data/enlaces.footer";
 
-
 const Footer = () => {
   return (
     <footer className="bg-gray-100 p-4 md:py-12 text-sm w-full">
@@ -31,8 +30,12 @@ const Footer = () => {
       </div>
       <div className="text-center my-12 text-gray-400 xl:text-base lg:text-base md:text-sm smd:text-sm sm:text-xs">
         &copy; 2025 Desarrollado por{" "}
-        <Link className="font-semibold font-sans hover:text-gray-500" href={"https://seventwo.tech"} target="_blank">
-          SevenTwo Technology
+        <Link
+          className="font-semibold font-sans hover:text-gray-500"
+          href={"https://seventwo.tech"}
+          target="_blank"
+        >
+          Seventwo Technologies
         </Link>
         . Todos los derechos reservados.
       </div>
