@@ -4,7 +4,7 @@ import Precios from "@/src/components/Precios";
 
 function page() {
   return (
-    <div className="w-full space-y-16">
+    <div className="w-full space-y-16 bg-gray-50">
       <Header />
       <Precios />
       <Footer />

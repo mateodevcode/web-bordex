@@ -6,7 +6,7 @@ import { logos } from "../data/slider.empresas";
 const Slider = () => {
   return (
     <div className="overflow-hidden whitespace-nowrap relative w-full my-5">
-      <div className="flex items-center space-x-20 animate-marquee ">
+      <div className="flex items-center space-x-20 animate-marquee">
         {logos.map((logo, index) => (
           <Image
             key={index}

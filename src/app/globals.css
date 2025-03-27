@@ -13,7 +13,7 @@
 
 .animate-marquee {
   display: flex;
-  animation: marquee 15s linear infinite;
+  animation: marquee 40s linear infinite;
 }
 
 @layer base {
