@@ -5,6 +5,7 @@ import { TbDeviceDesktopCode } from "react-icons/tb";
 import { LuNetwork } from "react-icons/lu";
 import { MdDashboard } from "react-icons/md";
 import { TbCalculatorFilled } from "react-icons/tb";
+import * as motion from "motion/react-client";
 
 import Microsecciones from "./Microsecciones";
 
@@ -12,48 +13,48 @@ function NavSecciones() {
   const [secciones, setSecciones] = useState("Dashboard");
 
   const buttons = [
-    {
-      icon: MdDashboard,
-      label: "Dashboard",
-    },
-
-    {
-      icon: LuNetwork,
-      label: "Análitica",
-    },
-
-    {
-      icon: TbCalculatorFilled, // Replace this with the appropriate icon for "Nomina"
-      label: "Nomina",
-    },
-
-    {
-      icon: TbDeviceDesktopCode,
-      label: "Procesos",
-    },
-
-    {
-      icon: BsPersonGear,
-      label: "Usuarios",
-    },
+    { icon: MdDashboard, label: "Dashboard" },
+    { icon: LuNetwork, label: "Análitica" },
+    { icon: TbCalculatorFilled, label: "Nomina" },
+    { icon: TbDeviceDesktopCode, label: "Procesos" },
+    { icon: BsPersonGear, label: "Usuarios" },
   ];
 
   return (
     <section className="p-6">
-      <div className="w-full grid lg:grid-cols-5 sm:grid-cols-1 smd:grid-cols-1 lg:max-w-7xl md:gap-2 lg:gap-8 mx-auto sm:max-w-screen-sm smd:max-w-screen-smd md:max-w-screen-md mb-6 bg-white">
+      <div className="w-full grid lg:grid-cols-5 sm:grid-cols-5 lg:max-w-7xl gap-2 mx-auto bg-white mb-6">
         {buttons.map((button, index) => (
-          <button
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.6 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
             key={index}
             onClick={() => setSecciones(button.label)}
-            className={`flex flex-row justify-center items-center gap-2 py-3 rounded-lg  ${
-              secciones === button.label
-                ? "bg-blue-600 text-white hover:bg-blue-700"
-                : "text-gray-700 hover:bg-blue-500/10 hover:text-blue-400"
-            }`}
+            className="relative flex flex-row justify-center items-center gap-2 py-3 rounded-lg overflow-hidden"
           >
-            <button.icon className="text-xl" />
-            <p className="font-semibold text-lg">{button.label}</p>
-          </button>
+            {secciones === button.label && (
+              <motion.div
+                layoutId="activeButton"
+                className="absolute inset-0 bg-blue-600"
+                initial={{ width: "0%" }}
+                animate={{ width: "100%" }}
+                exit={{ width: "0%" }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+              />
+            )}
+            <button.icon
+              className={`text-xl z-10 ${
+                secciones === button.label ? "text-white" : "text-gray-700"
+              }`}
+            />
+            <p
+              className={`font-semibold text-lg z-10 ${
+                secciones === button.label ? "text-white" : "text-gray-700"
+              }`}
+            >
+              {button.label}
+            </p>
+          </motion.button>
         ))}
       </div>
 

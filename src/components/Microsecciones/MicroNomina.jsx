@@ -31,6 +31,7 @@ import {
   UserCog,
 } from "lucide-react";
 import { useState } from "react";
+import * as motion from "motion/react-client";
 
 export default function SistemaNomina() {
   const empleadosData = [
@@ -90,7 +91,13 @@ export default function SistemaNomina() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto mb-8 xl:h-[400px] lg:h-[400px] md:h-auto sm:h-auto smd:h-auto bg-zinc-100 rounded-lg px-8 py-2 overflow-auto">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto mb-8 xl:h-[400px] lg:h-[400px] md:h-auto sm:h-auto smd:h-auto bg-zinc-100 rounded-lg px-8 py-2 overflow-auto"
+    >
       <Tabs
         value={activeTab}
         onValueChange={setActiveTab}
@@ -258,6 +265,6 @@ export default function SistemaNomina() {
           </div>
         </TabsContent>
       </Tabs>
-    </div>
+    </motion.div>
   );
 }

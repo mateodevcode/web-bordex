@@ -4,12 +4,19 @@ import { useState } from "react";
 import { Button } from "@/src/components/ui/button";
 import { ProcessTimeline } from "./Process-timeline";
 import { ProcessTable } from "./Process-table";
+import * as motion from "motion/react-client";
 
 const MicroProcesos = () => {
   const [view, setView] = useState("timeline");
 
   return (
-    <div className="flex flex-col lg:flex-row justify-center gap-8 max-w-7xl mx-auto mb-8 xl:h-[400px] lg:h-[400px] md:h-auto sm:h-auto smd:h-auto rounded-lg px-8 py-2 overflow-auto border border-zinc-200">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      className="flex flex-col lg:flex-row justify-center gap-8 max-w-7xl mx-auto mb-8 xl:h-[400px] lg:h-[400px] md:h-auto sm:h-auto smd:h-auto rounded-lg px-8 py-2 overflow-auto border border-zinc-200"
+    >
       <div className="max-h-screen bg-background">
         <header className="border-b">
           <div className="container flex h-16 items-center justify-between px-4">
@@ -28,7 +35,9 @@ const MicroProcesos = () => {
                 variant={view === "timeline" ? "default" : "outline"}
                 size="sm"
                 onClick={() => setView("timeline")}
-                className={`px-4 py-2 ${view === "timeline" ? "text-white" : ""}`}
+                className={`px-4 py-2 ${
+                  view === "timeline" ? "text-white" : ""
+                }`}
               >
                 Línea de Tiempo
               </Button>
@@ -47,7 +56,7 @@ const MicroProcesos = () => {
           {view === "timeline" ? <ProcessTimeline /> : <ProcessTable />}
         </main>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -4,6 +4,7 @@ import MicroUsuarios from "./MicroUsuarios";
 import MicroProcesos from "./Microprocesos/MicroProcesos";
 import MicroNomina from "./MicroNomina";
 
+
 const Microsecciones = ({ secciones }) => {
   switch (secciones) {
     case "Dashboard":

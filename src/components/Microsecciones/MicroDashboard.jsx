@@ -1,4 +1,5 @@
 import { Check, Plus, ShoppingBag } from "lucide-react";
+import * as motion from "motion/react-client";
 
 export default function MicroDashboard() {
   const data = [
@@ -8,7 +9,13 @@ export default function MicroDashboard() {
   ];
 
   return (
-    <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto mb-8 xl:h-[400px] lg:h-[400px] md:h-[650px] sm:h-[800px] smd:h-[800px]">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+      className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto mb-8 xl:h-[400px] lg:h-[400px] md:h-[650px] sm:h-[800px] smd:h-[800px]"
+    >
       <div className=" rounded-3xl p-6 flex flex-col md:flex-row gap-6 flex-1">
         {/* Users Card */}
         <div className="bg-[#B3F4F1] rounded-2xl p-5 flex flex-col flex-1">
@@ -162,6 +169,6 @@ export default function MicroDashboard() {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

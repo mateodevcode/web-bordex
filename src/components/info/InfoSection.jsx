@@ -2,6 +2,7 @@
 import BotonLeerMas from "/src/components/info/BotonLeerMas";
 import { MdArrowForward } from "react-icons/md";
 import Link from "next/link";
+import { motion } from "motion/react";
 
 function InfoSection() {
   return (
@@ -32,16 +33,30 @@ function InfoSection() {
             {" "}
             {/* Boton 1 */}
             <Link href="#microsecciones">
-              <button className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-2 rounded-lg font-semibold m-1">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.7 }}
+                initial={{ opacity: 0, y: -50 }} // Comienza invisible y desplazado hacia abajo
+                animate={{ opacity: 1, y: 0 }} // Se vuelve visible y sube a su posición original
+                transition={{ duration: 0.5, ease: "easeOut" }} // Suavidad en la animación
+                className="bg-blue-600 hover:bg-blue-500 text-white px-3 py-2 rounded-lg font-semibold m-1"
+              >
                 Explorar Funciones
-              </button>
+              </motion.button>
             </Link>
             {/* Boton 2 */}
             <Link href={`/conocer-mas`}>
-              <button className="px-3 py-2 rounded-lg text-white hover:bg-white/10 flex flex-row justify-center items-center m-1">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.7 }}
+                initial={{ opacity: 0, y: 50 }} // Comienza invisible y desplazado hacia abajo
+                animate={{ opacity: 1, y: 0 }} // Se vuelve visible y sube a su posición original
+                transition={{ duration: 0.5, ease: "easeOut" }} // Suavidad en la animación
+                className="px-3 py-2 rounded-lg text-white hover:bg-white/10 flex flex-row justify-center items-center m-1"
+              >
                 <p className="font-semibold">Conoce Más </p>{" "}
                 <MdArrowForward className="text-white text-base ml-4" />{" "}
-              </button>
+              </motion.button>
             </Link>
           </div>
         </div>

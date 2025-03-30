@@ -1,5 +1,6 @@
+"use client";
 import { steps } from "../data/pasos";
-
+import { motion } from "motion/react";
 
 export default function HowToUse() {
   return (
@@ -21,7 +22,15 @@ export default function HowToUse() {
           <div className="border-2 border-dashed md:mt-16 sm:mt-20 md:ml-8 border-zinc-300 w-px sm:h-80 smd:h-80 sm:ml-7 md:h-72 z-10 md:-mb-64 md:block md:absolute sm:block sm:absolute"></div>
           {/* map */}
           {steps.map((step, index) => (
-            <div
+            <motion.div
+              initial={{ y: step.targetY, opacity: 0 }}
+              transition={{
+                duration: 1,
+                delay: index * 0.3,
+                ease: "easeOut",
+              }}
+              whileInView={{ y: step.targetY1, opacity: 1 }} // Se mueven a diferentes alturas
+              viewport={{ once: true, amount: 0.3 }}
               key={index}
               className="flex flex-col sm:flex-row md:flex-row lg:flex-row sm:justify-center md:justify-start md:items-start sm:items-start lg:items-start lg:justify-start gap-6 z-20"
             >
@@ -33,11 +42,15 @@ export default function HowToUse() {
 
               <div className="flex flex-col items-center justify-center sm:items-start space-y-3">
                 <div className="space-y-2">
-                  <h3 className="sm:text-lg md:text-xl smd:text-xl lg: text-xl xl:text-2xl font-bold ">{step.title}</h3>
-                  <p className="text-muted-foreground smd:text-base md:text-base lg:pr-24 xl:text-base xl:pr-28">{step.description}</p>
+                  <h3 className="sm:text-lg md:text-xl smd:text-xl lg: text-xl xl:text-2xl font-bold ">
+                    {step.title}
+                  </h3>
+                  <p className="text-muted-foreground smd:text-base md:text-base lg:pr-24 xl:text-base xl:pr-28">
+                    {step.description}
+                  </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -5,6 +5,7 @@ import {
 } from "react-icons/io5";
 import { plans } from "../data/plans";
 import { useState } from "react";
+import * as motion from "motion/react-client";
 
 function Precios() {
   const [plann, setPlann] = useState(1);
@@ -75,9 +76,14 @@ function Precios() {
                   </>
                 </ul>
               </div>
-              <button className="mt-8 bg-blue-600 text-white rounded-full w-auto py-2 hover:bg-blue-500">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.6 }}
+                transition={{ duration: 0.2, ease: "easeInOut" }}
+                className="mt-8 bg-blue-600 text-white rounded-full w-auto py-2 hover:bg-blue-500"
+              >
                 Suscribirse
-              </button>
+              </motion.button>
             </div>
           ))}
         </div>
