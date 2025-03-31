@@ -5,7 +5,7 @@ import {
 } from "react-icons/io5";
 import { plans } from "../data/plans";
 import { useState } from "react";
-import * as motion from "motion/react-client";
+import {motion} from "motion/react";
 
 function Precios() {
   const [plann, setPlann] = useState(1);

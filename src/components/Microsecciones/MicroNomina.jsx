@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/src/components/ui/button";
 import {
   DropdownMenu,
@@ -31,7 +33,7 @@ import {
   UserCog,
 } from "lucide-react";
 import { useState } from "react";
-import * as motion from "motion/react-client";
+import {motion} from "motion/react";
 
 export default function SistemaNomina() {
   const empleadosData = [

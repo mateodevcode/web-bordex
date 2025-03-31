@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "@/src/components/ui/button";
 import { ProcessTimeline } from "./Process-timeline";
 import { ProcessTable } from "./Process-table";
-import * as motion from "motion/react-client";
+import { motion } from "motion/react";
 
 const MicroProcesos = () => {
   const [view, setView] = useState("timeline");

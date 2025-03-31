@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/src/components/ui/button";
 import {
   Card,
@@ -40,7 +41,7 @@ import {
   XCircle,
 } from "lucide-react";
 import { useState } from "react";
-import * as motion from "motion/react-client";
+import { motion } from "motion/react";
 
 export default function MicroUsuarios() {
   const usersData = [
@@ -97,12 +98,13 @@ export default function MicroUsuarios() {
   const [activeTab, setActiveTab] = useState("users");
 
   return (
-    <motion.div 
-    initial={{ opacity: 0, y: 20 }}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
-    className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto mb-8 xl:h-[400px] lg:h-[400px] md:h-auto sm:h-auto smd:h-auto bg-zinc-100 rounded-lg px-8 py-2 overflow-auto">
+      className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto mb-8 xl:h-[400px] lg:h-[400px] md:h-auto sm:h-auto smd:h-auto bg-zinc-100 rounded-lg px-8 py-2 overflow-auto"
+    >
       <Tabs
         value={activeTab}
         onValueChange={setActiveTab}
