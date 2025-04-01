@@ -22,7 +22,7 @@ function NavSecciones() {
 
   return (
     <section className="p-6">
-      <div className="w-full grid lg:grid-cols-5 sm:grid-cols-5 lg:max-w-7xl gap-2 mx-auto bg-white mb-6">
+      <div className="w-full grid lg:grid-cols-5 sm:grid-cols-1 lg:max-w-7xl gap-2 mx-auto bg-white mb-6">
         {buttons.map((button, index) => (
           <motion.button
             whileHover={{ scale: 1.1 }}

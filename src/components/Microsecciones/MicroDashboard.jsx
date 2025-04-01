@@ -15,7 +15,7 @@ export default function MicroDashboard() {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto mb-8 xl:h-[400px] lg:h-[400px] md:h-[650px] sm:h-[800px] smd:h-[800px]"
+      className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto mb-8 xl:h-[400px] lg:h-[400px] md:h-[650px] sm:h-[800px] smd:h-[800px] overflow-y-auto"
     >
       <div className=" rounded-3xl p-6 flex flex-col md:flex-row gap-6 flex-1">
         {/* Users Card */}
